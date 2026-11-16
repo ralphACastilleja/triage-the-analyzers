@@ -4,6 +4,8 @@ import jakarta.validation.constraints.NotNull;
 import team.projectpulse.ram.document.DocumentStatus;
 import team.projectpulse.ram.document.DocumentType;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public record RequirementDocumentDto(Long id,
@@ -16,4 +18,8 @@ public record RequirementDocumentDto(Long id,
                                      List<DocumentSectionDto> sections,
                                      DocumentStatus status,
                                      Integer version) {
+    // Snapshot collection structure; retain nulls for existing validation behavior.
+    public RequirementDocumentDto {
+        sections = sections == null ? null : Collections.unmodifiableList(new ArrayList<>(sections));
+    }
 }

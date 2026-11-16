@@ -19,11 +19,12 @@ public class DocumentTemplate {
     }
 
     public List<SectionTemplate> getSections() {
-        return sections;
+        return new ArrayList<>(sections);
     }
 
     public void setSections(List<SectionTemplate> sections) {
-        this.sections = sections;
+        // DocumentService treats absent and empty template sections identically.
+        this.sections = sections == null ? new ArrayList<>() : new ArrayList<>(sections);
     }
 
     public static class SectionTemplate {

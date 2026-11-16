@@ -1,0 +1,10 @@
+Toolchain: Temurin Java 21.0.13+9
+Command: mvnw.cmd verify -Dtest=*Test,!*IntegrationTest,!*ControllerTest,!WebConfigSpaForwardingTest
+Docker-backed tests excluded locally; analyzers and all test compilation included.
+
+[INFO] Tests run: 129, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BugInstance size is 0
+[INFO] Error size is 0
+[INFO] PMD version: 7.29.0
+[INFO] BUILD SUCCESS
+[INFO] Total time:  29.083 s

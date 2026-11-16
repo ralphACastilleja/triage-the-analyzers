@@ -15,6 +15,7 @@ public class Student extends PeerEvaluationUser {
 
 
     public Student() {
+        // Required by JPA; keep this no-argument constructor alongside the value constructors.
     }
 
     public Student(String username, String firstName, String lastName, String email, String password, boolean enabled, String roles) {

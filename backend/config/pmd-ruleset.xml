@@ -13,5 +13,13 @@
          xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
     <description>PMD quickstart, with Project Pulse's decisions.</description>
     <rule ref="rulesets/java/quickstart.xml">
+        <!-- D2: enforce both constructor rules. Keep/document no-argument constructors
+             when other constructors exist; remove only constructors identical to
+             javac's implicit public default, preserving JPA/bean construction. -->
+        <!-- D3: enforce braces. Entity association helpers and security guards are
+             edited frequently; explicit blocks keep later additions conditional. -->
+        <!-- D4: enforce log guards. SLF4J placeholders defer formatting, not argument
+             evaluation; avoid calling entity getters or computing log-only values
+             when their level is disabled. Business operations stay outside guards. -->
     </rule>
 </ruleset>

@@ -1,0 +1,8 @@
+Command: mvnw.cmd -Dtest=StatusCodeTest test
+Revision: 55c6383 (test before fix)
+
+[INFO] Running team.projectpulse.system.StatusCodeTest
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.090 s <<< FAILURE! -- in team.projectpulse.system.StatusCodeTest
+org.opentest4j.AssertionFailedError: StatusCode contains only constants and must not expose an instantiable API ==> expected: <true> but was: <false>
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0
+[INFO] BUILD FAILURE

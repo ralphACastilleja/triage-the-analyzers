@@ -16,6 +16,7 @@ public class Result {
 
 
     public Result() {
+        // Supports bean-style construction before properties are populated.
     }
 
     public Result(boolean flag, Integer code, String message) {

@@ -19,6 +19,7 @@ public class UseCaseExtensionStep {
 
 
     public UseCaseExtensionStep() {
+        // Required by JPA; keep this no-argument constructor alongside the value constructors.
     }
 
     public UseCaseExtensionStep(String actor, String actionText) {
