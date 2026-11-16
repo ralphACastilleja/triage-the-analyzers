@@ -33,6 +33,7 @@ public class Course {
     private List<Rubric> rubrics = new ArrayList<>();
 
     public Course() {
+        // Required by JPA; keep this no-argument constructor alongside the value constructors.
     }
 
     public Course(String courseName, String courseDescription) {

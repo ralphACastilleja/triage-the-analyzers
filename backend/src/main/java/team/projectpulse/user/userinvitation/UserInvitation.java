@@ -15,6 +15,7 @@ public class UserInvitation {
 
 
     public UserInvitation() {
+        // Required by JPA; keep this no-argument constructor alongside the value constructors.
     }
 
     public UserInvitation(String email, Integer courseId, Integer sectionId, String token, String role) {

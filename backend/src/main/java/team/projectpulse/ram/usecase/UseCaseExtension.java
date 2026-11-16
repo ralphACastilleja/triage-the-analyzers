@@ -56,7 +56,7 @@ public class UseCaseExtension {
 
 
     public UseCaseExtension() {
-
+        // Required by JPA; keep this no-argument constructor alongside the value constructors.
     }
 
     public UseCaseExtension(String conditionText, ExtensionKind kind, ExtensionExit extensionExit) {

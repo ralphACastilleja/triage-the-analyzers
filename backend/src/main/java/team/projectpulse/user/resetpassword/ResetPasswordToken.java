@@ -16,6 +16,7 @@ public class ResetPasswordToken {
 
 
     public ResetPasswordToken() {
+        // Required by JPA; keep this no-argument constructor alongside the value constructors.
     }
 
     public ResetPasswordToken(String email) {

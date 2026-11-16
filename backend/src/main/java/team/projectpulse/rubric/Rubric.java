@@ -25,6 +25,7 @@ public class Rubric {
 
 
     public Rubric() {
+        // Required by JPA; keep this no-argument constructor alongside the value constructors.
     }
 
     public Rubric(String rubricName) {

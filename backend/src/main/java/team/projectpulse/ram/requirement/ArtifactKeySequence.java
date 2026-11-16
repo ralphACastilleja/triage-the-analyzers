@@ -28,6 +28,7 @@ public class ArtifactKeySequence {
 
 
     public ArtifactKeySequence() {
+        // Required by JPA; keep this no-argument constructor alongside the value constructors.
     }
 
     public ArtifactKeySequence(Team team, RequirementArtifactType type) {

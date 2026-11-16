@@ -7,4 +7,38 @@
 
      Unlike the baseline, this file may grow, but every entry is a reviewed decision. -->
 <FindBugsFilter>
+    <!-- D1: JPA associations retain managed identity and persistence collection wrappers.
+         Section.addInstructor updates both sides of the same association; copying the
+         entity graph would change persistence and dirty-tracking behavior. -->
+    <Match>
+        <Annotation name="jakarta.persistence.Entity"/>
+        <Bug pattern="EI_EXPOSE_REP,EI_EXPOSE_REP2"/>
+    </Match>
+    <!-- D1: constructor injection retains the container's shared bean, not a copy.
+         Only constructor storage is exempt; service accessors remain checked. -->
+    <Match>
+        <Or>
+            <Annotation name="org.springframework.stereotype.Service"/>
+            <Annotation name="org.springframework.stereotype.Component"/>
+            <Annotation name="org.springframework.web.bind.annotation.RestController"/>
+        </Or>
+        <Method name="&lt;init&gt;"/>
+        <Bug pattern="EI_EXPOSE_REP2"/>
+    </Match>
+    <!-- D1: these mutable report builders expose working collections intentionally.
+         EvaluationService builds report.getPeerEvaluationAverages().add(...);
+         returning a defensive copy would silently lose each appended row. -->
+    <Match>
+        <Or>
+            <Class name="team.projectpulse.evaluation.PeerEvaluationAverage"/>
+            <Class name="team.projectpulse.evaluation.WeeklyPeerEvaluationReport"/>
+        </Or>
+        <Bug pattern="EI_EXPOSE_REP,EI_EXPOSE_REP2"/>
+    </Match>
+    <!-- D1: UserDetails methods deliberately delegate to the authenticated entity.
+         Cloning it would change the identity and isEnabled delegation contract. -->
+    <Match>
+        <Class name="team.projectpulse.user.MyUserPrincipal"/>
+        <Bug pattern="EI_EXPOSE_REP,EI_EXPOSE_REP2"/>
+    </Match>
 </FindBugsFilter>

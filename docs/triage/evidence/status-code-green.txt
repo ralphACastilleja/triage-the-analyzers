@@ -1,0 +1,7 @@
+Command: mvnw.cmd -Dtest=StatusCodeTest test
+After the StatusCode private-constructor fix
+
+[INFO] Running team.projectpulse.system.StatusCodeTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.095 s -- in team.projectpulse.system.StatusCodeTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS

@@ -22,6 +22,7 @@ public class Criterion {
 
 
     public Criterion() {
+        // Required by JPA; keep this no-argument constructor alongside the value constructors.
     }
 
     public Criterion(String criterion, String description, Double maxScore) {
